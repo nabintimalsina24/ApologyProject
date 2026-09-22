@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To The Most Special Person In My Life</title>
+
+<!-- Google Fonts: a serif display face for the emotional headlines, a soft sans for body text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======================================================= -->
+<!-- FLOATING PARTICLES + HEARTS (decorative, animated via JS) -->
+<!-- ======================================================= -->
+<div class="floating-layer" id="floatingLayer" aria-hidden="true"></div>
+
+<!-- ======================================================= -->
+<!-- MUSIC PLAYER — replace music/song.mp3 with your own track -->
+<!-- ======================================================= -->
+<audio id="bgMusic" loop preload="none">
+  <!-- CHANGE #5: put your chosen song file inside the /music folder and update the path below -->
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-btn" aria-label="Play background music">
+  <svg id="iconMuted" viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16.5 12A4.5 4.5 0 0 0 14 8v2.2l2.4 2.4c.06-.2.1-.4.1-.6zm2.5 0c0 .94-.2 1.82-.55 2.62l1.51 1.51A7.99 7.99 0 0 0 21 12c0-3.5-2-6.5-5-7.9v2.13c1.79 1.14 3 3.14 3 5.77zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.14v2.05a8.9 8.9 0 0 0 3.69-1.86L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></svg>
+  <svg id="iconPlaying" viewBox="0 0 24 24" width="20" height="20" style="display:none"><path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+</button>
+
+<!-- ======================================================= -->
+<!-- HERO SECTION -->
+<!-- ======================================================= -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">for the girl who changed everything</p>
+    <h1 class="hero-title">To Archana,<br>The Most Special Person In My Life <span class="heart">❤</span></h1>
+    <p class="hero-sub">I know I made mistakes, and I can't change the past... but I can sincerely apologize and make things better from now on.</p>
+    <a href="#apology" class="btn btn-primary open-heart-btn">
+      <span>Open My Heart</span> <span class="heart">❤</span>
+    </a>
+  </div>
+  <div class="hero-scroll-hint" aria-hidden="true"></div>
+</section>
+
+<!-- ======================================================= -->
+<!-- APOLOGY SECTION — handwritten letter style card -->
+<!-- ======================================================= -->
+<section class="section apology-section" id="apology">
+  <div class="reveal">
+    <p class="eyebrow">I'm Truly Sorry</p>
+  </div>
+  <div class="letter-card reveal">
+    <div class="letter-card__pin"></div>
+    <p class="letter-text">
+      I know I've made mistakes in the past. I know there were moments when my words, actions, or decisions may have hurt you. I can't go back and change what happened, but I want you to know that I'm genuinely sorry for everything.
+    </p>
+    <p class="letter-text">
+      I never wanted to hurt you, and I'm truly sorry for every mistake I made, every moment I disappointed you, and every time I made you feel anything less than special.
+    </p>
+    <p class="letter-text">
+      I don't expect you to forget everything overnight. I only hope you can forgive me and give me a chance to leave the past where it belongs — in the past.
+    </p>
+    <!-- CHANGE #1: sign this letter with your own name -->
+    <p class="letter-signoff">— Naveen</p>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- FORGIVE ME SECTION -->
+<!-- ======================================================= -->
+<section class="section forgive-section" id="forgive">
+  <div class="reveal">
+    <h2 class="section-title">Can you forgive me? <span class="soft-emoji">🥺</span><span class="heart">❤</span></h2>
+    <p class="section-sub">There's no rush, and no pressure. Only if you're ready.</p>
+    <button id="forgiveBtn" class="btn btn-primary">
+      <span>Yes, I Forgive You</span> <span class="heart">❤</span>
+    </button>
+  </div>
+  <div id="forgiveResponse" class="forgive-response" hidden>
+    <p>Thank you for giving us another chance. <span class="heart">❤</span></p>
+  </div>
+  <canvas id="heartsCanvas" class="hearts-canvas" aria-hidden="true"></canvas>
+</section>
+
+<!-- ======================================================= -->
+<!-- NEW CHAPTER SECTION -->
+<!-- ======================================================= -->
+<section class="section chapter-section" id="chapter">
+  <div class="reveal">
+    <h2 class="section-title">Let's Start A New Chapter <span class="soft-emoji">🌙</span><span class="heart">❤</span></h2>
+    <p class="chapter-text">
+      Maybe we can't rewrite the past, but we can choose what happens next.
+    </p>
+    <p class="chapter-text">
+      I don't want to keep looking back at the mistakes I've made. I want to learn from them, become better, and create something beautiful with you.
+    </p>
+    <p class="chapter-text">So, if you can forgive me...</p>
+    <ul class="chapter-list">
+      <li>Let's leave the past behind.</li>
+      <li>Let's stop carrying old mistakes into tomorrow.</li>
+      <li>Let's start again.</li>
+      <li>Let's create new memories.</li>
+      <li>Let's write a better chapter together.</li>
+    </ul>
+    <button id="chapterBtn" class="btn btn-primary">
+      <span>Start A New Chapter</span> <span class="heart">❤</span>
+    </button>
+    <p id="chapterMessage" class="chapter-message" hidden>Chapter 1 — A Fresh Start <span class="heart">❤</span></p>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- SPECIAL MESSAGE SECTION -->
+<!-- ======================================================= -->
+<section class="section special-section" id="special">
+  <div class="reveal special-card">
+    <h2 class="section-title">You Are Special To Me <span class="heart">❤</span></h2>
+    <p class="special-text">You are not just another person in my life.</p>
+    <p class="special-text">You are one of the most special people I've ever met. Your presence means more to me than I sometimes know how to explain.</p>
+    <p class="special-text">And honestly...</p>
+    <p class="special-text">I think you are the most beautiful person — not only because of how you look, but because of the way you make ordinary moments feel special.</p>
+    <p class="special-text">You mean a lot to me, and I never want you to doubt that.</p>
+  </div>
+</section>
+
+<!-- ======================================================= -->
+<!-- FINAL CINEMATIC SECTION -->
+<!-- ======================================================= -->
+<section class="section final-section" id="final">
+  <div class="final-inner">
+    <p class="final-line reveal-line">Past mistakes don't define us.</p>
+    <p class="final-line reveal-line">What matters is what we choose to do from here. <span class="heart">❤</span></p>
+
+    <p class="final-line final-line--spaced reveal-line">I'm sorry for everything.</p>
+    <p class="final-line reveal-line">Please forgive me.</p>
+    <p class="final-line reveal-line">And if you let me...</p>
+    <p class="final-line final-line--big reveal-line">Let's start a new chapter. <span class="heart">❤</span></p>
+
+    <div class="final-signoff reveal-line">
+      <p>With all my heart,</p>
+      <!-- CHANGE #1: your name goes here too -->
+      <p class="final-name">Naveen Timalsina <span class="heart">❤</span></p>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
